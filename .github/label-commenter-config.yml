@@ -14,7 +14,6 @@ labels:
         action: close
       pr:
         body: Thank you @{{ pull_request.user.login }} for suggesting this. Please follow the pull request templates.
-        action: close
     unlabeled:
       issue:
         body: Thank you for following the template. The repository owner will reply.
@@ -31,6 +30,8 @@ labels:
       issue:
         body: This will not be worked on but we appreciate your contribution.
         action: close
+      pr:
+        body: Thank you @{{ pull_request.user.login }} for change to wontfix. This will not be worked on but we appreciate your contribution.
     unlabeled:
       issue:
         body: This has become active again.
@@ -40,10 +41,16 @@ labels:
       issue:
         body: This issue already exists.
         action: close
+      pr:
+        body: This issue already exists.
   - name: good first issue
     labeled:
       issue:
         body: This issue is easy for contributing. Everyone can work on this.
+  - name: feature
+    labeled:
+      pr:
+        body: Hey this is a feature!!
   - name: proposal
     labeled:
       issue:
